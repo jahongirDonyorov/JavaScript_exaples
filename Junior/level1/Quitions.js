@@ -312,3 +312,76 @@ tanlasa 'Ruyhatdan muvoffaqqiyatli uttingiz' aks holda
 // Kirish(101,'Umar') //=> hush kelibsiz
 // Kirish(10,'Umar')  // => parol yoki name xato
 // Kirish(101,'Ali')   // => parol yoki name xato
+
+
+
+
+
+// 1. check(str1, srt2)  - function yozilsin. berilgan parametrlar bir biriga mos yoki
+// umumey tug'ri kelmasligi va qismon to'g'ri ekanligini ifodalavchi natijani qaytarsin.
+// ex: str1 = 'Jahongir Doniyarov' , str2 = 'gir' qisman ichida bulsa ichida bor deb chiqsin tuliq bir biriga mos kelsa tuliq mos keldi desin
+
+// let str1 = 'Jahongir Doniyarov';
+// let str2 = 'gir';
+// function check(str1, str2){
+// if(str1.localeCompare(str2) === 0){
+//   console.log('To\'liq mos keldi')
+// }else if(str1.localeCompare(str2) === 1){
+//   console.log('qisman bor')
+// }else{
+//   console.log('mos kelmadi')
+// }
+// }
+
+// check(str1,str2)
+
+// SUCCES
+
+// 2. getCount(str) - function yozilsin. functiondagi harflar sanog'ini chiqarib bersin
+// ex: str = {'webbrain'}; {w:1,e:1,b:2,r:1,a:1,i:1,n:1 }
+let str = 'Jahongir'
+function getCount(str){
+  let char = {}
+  for(i of str){
+    if(char[i]){
+      char[i]++
+    }else{
+      char[i] = 1
+    }
+  }
+  return char
+}
+console.log(getCount(str))
+
+
+// 3. truncate(str, n) - funtion yozilsin. Berilgan stringdan 'n' ta harf ajiratib berilsin
+// es: str = 'webbrain' , n=5
+// res: 'webbr'
+let n = 2
+function del(str,n){
+  return str.slice(0,n)
+}
+console.log(del(str,n))
+
+// -=-=-=- SUCCES
+
+
+// 4. getCurrency(str) - berilgan string yoke pul birligini faqat raqamlarini ajiratib chiqarsin
+// ex: '$1200' - 1200
+let str1 = '$120'
+function getCount(str1){
+  let count = ''
+  for(i of str1){
+    // console.log(i)
+    if( i !== '$'){
+     console.log(count.concat(i))
+    }
+  }
+  console.log(count)
+}
+getCount(str1)
+// 5. berilgan string raqam, string va characterlarni alohida sano'gi blan chiqaring.
+// ex: 'John@!n_2004', res:{letter:6, char:3, number:4}
+
+// 6. copitalize(str) - berilgan stringdagi barcha so'zlarni faqat bosh harifini katta harfga o'zgartirib chiqish kerak
+// ex: str = jahongir doniyarov // Jahongir Doniyarov
